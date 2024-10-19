@@ -106,8 +106,160 @@
 //     console.log(arr[i]);
 // }
 //ANCHOR - CREATE AN ARROW FUNCTIONS TO MULTIPLE TWO NUMBERS
-var val = function (v1, v2) {
-    return v1 * v2;
-};
-var result = val(10, 20);
-console.log(result);
+// var val = (v1:number,v2:number)=>{
+//     return v1*v2;
+// }
+// var result = val(10,20);
+// console.log(result);
+//ANCHOR - ENUm
+// enum val{
+//     Red, 
+//     Green,
+//     Yellow
+// }
+// console.log(val);
+// console.log(val[0]);
+// console.log(val[1]);
+// console.log(val[2]);
+//ANCHOR - let
+// function test():void{
+//     let x:number = 35;
+//     console.log(x);
+// }
+// console.log(x); // Error
+// test();
+//ANCHOR - Const
+// function test():void{
+//     const x:number = 35;
+//     console.log(x);
+// x = 25;
+// console.log(x); // ERROR
+// }
+// test();
+//console.log(x); //ERROR
+//ANCHOR - NON-STATIC VARIABLES
+// class a{
+//     id:number;
+//     city:string;
+//     test():void{
+//         this.id=10;
+//         this.city="Bangalore";
+//         console.log(this.id); // Correct and will give the output
+//         console.log(this.city); // correcrt and will give the output
+//     }
+// }
+// var a1 = new a();
+// a1.test();
+//console.log(a1.id); // Error and Unaccessible variables
+//console.log(a1.city);// Error and Unaccessible variables
+//ANCHOR - Constructor
+// class a{
+//     constructor(){
+//             console.log(10);
+//     }
+// }
+// var a1 = new a();
+//ANCHOR - Constructor with Args
+// class a{
+//     constructor(id:number, city:string){
+//         console.log(`${id} ${city}`);
+//     }
+// }
+// var a1 = new a(10,"SAM");
+// class a {
+//     x:number;
+//     y:string;
+//     constructor(id:number, city:string){
+//         this.x=id;
+//         this.y=city;
+//         console.log(this.x);
+//         console.log(this.y);
+//     }
+// }
+// var a1 = new a(10,"SAM");
+// class a{
+//     x:string = "SAMRAT";
+//     y:number=10;
+// }
+// var a1 = new a();
+// console.log(this.x); // error
+// console.log(a1.y);  // correct
+// class a{
+//     x:string = "SAMRAT";
+//     y:number = 10;
+//     test():void{
+//         console.log(this.x);
+//         console.log(this.y);
+//     }
+// }
+// var a1 = new a();
+// a1.test();
+// class a{
+//     id:number;
+//     city:string;
+// }
+// var a1{                                  //-> errors
+//     "id":10,
+//     "city":"bangalore";
+// }
+// console.log(a1.id);
+// console.log(a1.city);
+//ANCHOR - INTERFACE
+// interface a{
+//     test():void;
+// }
+// class b implements a{
+//     test():void{
+//         console.log(100);
+//     }
+// }
+// var b1 = new b();
+// b1.test();
+// interface a{
+//     city:string;
+//     test():void;
+// }
+// class b implements a {
+//     city:string;
+//     test():void{
+//         console.log("FROM TEST");
+//     }
+// }
+// var b1 = new b();
+// b1.test();
+//ANCHOR - STATIC
+// class a{
+//     static x:number=10;
+//     x=20; // cannot be changed
+// }
+// console.log(a.x);
+// class a{
+//     static test():void{
+//         console.log("FROM TEST");
+//     }
+// }
+// a.test();
+//ANCHOR - INHERINTANCE
+// class a{
+//     test():void{
+//         console.log("This test");
+//     }
+// }
+// class b extends a {
+// }
+// var b1 = new b();
+// b1.test();
+//ANCHOR - ARROW FUNCTION
+var a = /** @class */ (function () {
+    function a() {
+    }
+    a.prototype.test = function () {
+        var x = function () {
+            console.log("This is inside of an arrow function");
+        };
+        x();
+    };
+    return a;
+}());
+var a1 = new a();
+a1.test();
